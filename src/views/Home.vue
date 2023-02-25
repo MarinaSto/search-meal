@@ -10,12 +10,12 @@
 </template>
 
 <script setup>
-import {computed, onMounted} from "vue";
+import {computed, onMounted, ref} from "vue";
 import store from '../store/index.js';
 import axiosClient from "../axiosClient";
 
 const letters = 'ABCDEFGHIJLMNOPQRSTUVWXYZ'
-
+const ingredients = ref([]);
 onMounted(async () => {
     const respons = await axiosClient.get('/list.php?i=list');
 })
