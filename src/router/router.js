@@ -5,12 +5,13 @@ import MealList from '../views/MealList.vue'
 import MealsByName from '../views/MealsByName.vue'
 import MealsByLetter from '../views/MealsByLetter.vue'
 import MealsByIngredient from '../views/MealsByIngredient.vue'
+import MealDetails from '../views/MealDetails.vue'
 
 const routes = [
     {
         path: '/',
         component: DefaultLayout,
-        children:[
+        children: [
             {
                 path: '/',
                 name: 'home',
@@ -20,18 +21,26 @@ const routes = [
                 path: '/letter/:letter?',
                 name: 'byList',
                 component: MealList
-            }, {
+            },
+            {
                 path: '/by-name/:name?',
                 name: 'byName',
                 component: MealsByName
-            }, {
+            },
+            {
                 path: '/by-letter/:letter?',
                 name: 'byLetter',
                 component: MealsByLetter
-            }, {
+            },
+            {
                 path: '/by-ingredient/:ingredient?',
                 name: 'byIngredient',
                 component: MealsByIngredient
+            },
+            {
+                path: '/meal/:id?',
+                name: 'mealDetails',
+                component: MealDetails
             },
         ]
     },
